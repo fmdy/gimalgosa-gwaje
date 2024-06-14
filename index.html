@@ -179,8 +179,94 @@
 
 <div class="container">
     <div class="product-images">
-        <img src="https://assets.roguefitness.com/f_auto,q_auto,c_fill,g_center,w_1200,h_800/homepage/2024%20Q2/mobile-2_uka7jd.jpg" alt="상품 이미지">
+        <img src="https://sweker.com/web/product/big/202402/4367fa7127472d4d648deb649d2ce4fb.jpg" alt="상품 이미지"> 
     </div>
+    <div class="product-details">
+                <h2> 역도 크로스핏 손목보호대</h2>
+                <p>가격: 35,000원</p>
+
+                        <div class="color-options">
+                            <h3>색상 선택</h3>
+ 
+                                <button class="color-button" data-color="black" onclick="selectColor('블랙')">블랙</button>
+                                <button class="color-button" data-color="red" onclick="selectColor('레드')">레드</button>
+                                <button class="color-button" data-color="yellow" onclick="selectColor('옐로우')">옐로우</button>
+                                <button class="color-button" data-color="camo" onclick="selectColor('카모')">카모</button>
+                            </div>
+                            <p id="selected-color">선택된 색상: 없음</p>
+                    
+                </div>
+
+                <div class="quantity-options">
+                    <h3>수량 선택</h3>
+                    <div class="quantity-controls">
+                        <button onclick="changeQuantity(-1)">-</button>
+                        <span id="quantity">1</span>
+                        <button onclick="changeQuantity(1)">+</button>
+                    </div>
+                </div>
+
+                <div class="buttons">
+                    <button class="action-button" onclick="addToCart()">장바구니 담기</button>
+                    <button class="action-button" onclick="buyNow()">바로 구매하기</button>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            function toggleScrollOptions(id) {
+                var options = document.getElementById(id);
+                if (options.style.display === "block") {
+                    options.style.display = "none";
+                } else {
+                    options.style.display = "block";
+                    options.scrollIntoView({ behavior: 'smooth' });
+                }
+            }
+
+            function selectColor(color) {
+                document.getElementById('selected-color').innerText = '선택된 색상: ' + color;
+            }
+
+            function changeQuantity(change) {
+                var quantityElement = document.getElementById('quantity');
+                var currentQuantity = parseInt(quantityElement.innerText);
+                var newQuantity = currentQuantity + change;
+                if (newQuantity < 1) {
+                    newQuantity = 1;
+                }
+                quantityElement.innerText = newQuantity;
+            }
+
+            function addToCart() {
+                alert('장바구니에 담겼습니다.');
+            }
+
+            function buyNow() {
+                alert('구매 페이지로 이동합니다.');
+            }
+        </script>
+    </body>
+
+    <script>
+    function toggleScrollOptions(id) {
+        var options = document.getElementById(id);
+        if (options.style.display === "block") {
+            options.style.display = "none";
+        } else {
+            options.style.display = "block";
+            options.scrollIntoView({ behavior: 'smooth' });
+        }
+    }
+
+    function addToCart() {
+        alert('장바구니에 담겼습니다.');
+    }
+
+    function buyNow() {
+        alert('구매 페이지로 이동합니다.');
+    }
+    </script>
 
     <!-- Most Popular Section -->
     <div class="most-popular-section">
